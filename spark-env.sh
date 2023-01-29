@@ -75,3 +75,31 @@
 # You might get better performance to enable these options if using native BLAS (see SPARK-21305).
 # - MKL_NUM_THREADS=1        Disable multi-threading of Intel MKL
 # - OPENBLAS_NUM_THREADS=1   Disable multi-threading of OpenBLAS
+
+## 设置JAVA安装目录
+JAVA_HOME=/export/server/jdk1.8.0_361
+
+## HADOOP软件配置文件目录，读取HDFS上文件和运行YARN集群
+HADOOP_CONF_DIR=/export/server/hadoop-3.3.0/etc/hadoop
+YARN_CONF_DIR=/export/server/hadoop-3.3.0/etc/hadoop
+
+## 指定spark老大Master的IP和提交任务的通信端口
+# 告知Spark的master运行在哪个机器上
+export SPARK_MASTER_HOST=arcsinszy
+# 告知sparkmaster的通讯端口
+export SPARK_MASTER_PORT=7077
+# 告知spark master的 webui端口
+SPARK_MASTER_WEBUI_PORT=8080
+
+# worker cpu可用核数
+SPARK_WORKER_CORES=4
+# worker可用内存
+SPARK_WORKER_MEMORY=1g
+# worker的工作通讯地址
+SPARK_WORKER_PORT=7078
+# worker的 webui地址
+SPARK_WORKER_WEBUI_PORT=8081
+
+## 设置历史服务器
+# 配置的意思是  将spark程序运行的历史日志 存到hdfs的/sparklog文件夹中
+SPARK_HISTORY_OPTS="-Dspark.history.fs.logDirectory=hdfs://arcsinszy:8020/sparklog/ -Dspark.history.fs.cleaner.enabled=true"
