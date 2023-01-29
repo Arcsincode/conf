@@ -102,4 +102,4 @@ SPARK_WORKER_WEBUI_PORT=8081
 
 ## 设置历史服务器
 # 配置的意思是  将spark程序运行的历史日志 存到hdfs的/sparklog文件夹中
-SPARK_HISTORY_OPTS="-Dspark.history.fs.logDirectory=hdfs://arcsinszy:8020/sparklog/ -Dspark.history.fs.cleaner.enabled=true"
+SPARK_HISTORY_OPTS="-Dspark.history.fs.logDirectory=hdfs://arcsinszy:26920/sparklog/ -Dspark.history.fs.cleaner.enabled=true"
